@@ -382,23 +382,27 @@ class StoryController extends Controller
 
     public function vote($story_id)
     {
-        $data = $this->Vote->findConditionClass('user_id', Auth::user()->id, 'story_id', $story_id)->toArray();
-        $getvote = $this->Story->getVote($story_id)->toArray();
-        // dd($getvote->toArray());
-        if ($data == null) {
-            $getvote['total_vote'] = $getvote['total_vote'] + 1;
-            $insert_info['story_id'] = $story_id;
-            $insert_info['user_id'] = Auth::user()->id;
-            $vote_change = $this->Vote->create($insert_info);
-            $this->Story->update($story_id, $getvote);
+        if(Auth::user() != null) {
+            $data = $this->Vote->findConditionClass('user_id', Auth::user()->id, 'story_id', $story_id)->toArray();
+            $getvote = $this->Story->getVote($story_id)->toArray();
+            // dd($getvote->toArray());
+            if ($data == null) {
+                $getvote['total_vote'] = $getvote['total_vote'] + 1;
+                $insert_info['story_id'] = $story_id;
+                $insert_info['user_id'] = Auth::user()->id;
+                $vote_change = $this->Vote->create($insert_info);
+                $this->Story->update($story_id, $getvote);
 
-            return response()->json(['success' => trans('action.vote') . trans('action.success'), 'total_vote' => $getvote, 'status' => 'voted']);
+                return response()->json(['success' => trans('action.vote') . trans('action.success'), 'total_vote' => $getvote, 'status' => 'voted']);
+            } else {
+                $getvote['total_vote'] = $getvote['total_vote'] - 1;
+                $vote_change = $this->Vote->delete($data[0]['id']);
+                $this->Story->update($story_id, $getvote);
+
+                return response()->json(['success' => trans('action.unvote') . trans('action.success'), 'total_vote' => $getvote, 'status' => 'unvote']);
+            }
         } else {
-            $getvote['total_vote'] = $getvote['total_vote'] - 1;
-            $vote_change = $this->Vote->delete($data[0]['id']);
-            $this->Story->update($story_id, $getvote);
-
-            return response()->json(['success' => trans('action.unvote') . trans('action.success'), 'total_vote' => $getvote, 'status' => 'unvote']);
+            return response()->json(['error' => trans('message.loginToLike'), 'total_vote' => 0, 'status' => 'loginRequired']);
         }
     }
 
@@ -423,4 +427,5 @@ class StoryController extends Controller
 
         return view('user.list_story', ['data' => $story]);
     }
+
 }

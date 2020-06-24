@@ -11,14 +11,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $this->call(CategoryDatabaseSeeder::class);
-    }
-}
-
-class CategoryDatabaseSeeder extends Seeder {
-    public function run() 
-    {
-        Schema::disableForeignKeyConstraints();
         $Categories = [
             ['TRANG CHỦ', '1','trang-chu', '1', '0'],
             ['SÁCH', '1', 'sach', '1', '0'],
@@ -46,8 +38,5 @@ class CategoryDatabaseSeeder extends Seeder {
                 'parent_language_id' => $Category[4],
             ]);
         }
-
-        Schema::enableForeignKeyConstraints();
     }
 }
-// php artisan db:seed --class=CategorySeeder

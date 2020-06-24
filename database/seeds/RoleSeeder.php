@@ -11,29 +11,24 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('RoleDatabaseSeeder');
-        $this->call(RoleDatabaseSeeder::class);
+        DB::table('roles')->insert([
+            [ 'name' => 'admin', 'display_name' => 'Admin', 'description' => 'Tất cả quyền' ],
+            [ 'name' => 'User', 'display_name' => 'Người đọc', 'description' => 'Người đọc' ],
+            [ 'name' => 'tacGia', 'display_name' => 'Tác Giả', 'description' => 'Sáng tác' ],
+            [ 'name' => 'vipAccount', 'display_name' => 'Vip Account', 'description' => 'Tài Khoản Vip' ],
+        ]);
     }
 }
 
-class RoleDatabaseSeeder extends Seeder {
-    public function run() 
-    {
-        Schema::disableForeignKeyConstraints();
-        $roles = [
-            ['admin', 'Admin', 'All permission'],
-            ['User', 'User', 'User or Author'],
-        ];
-
-        foreach ($roles as $role) {
-            DB::table('roles')->insert([
-                'name' => $role[0],
-                'display_name' => $role[1],
-                'description' => $role[2],
-            ]);
-        }
-
-        Schema::enableForeignKeyConstraints();
-    }
-}
+// class RoleDatabaseSeeder extends Seeder {
+//     public function run() 
+//     {
+//         DB::table('roles')->insert([
+//             [ 'name' => 'admin', 'display_name' => 'Admin', 'description' => 'Tất cả quyền' ],
+//             [ 'name' => 'User', 'display_name' => 'Người đọc', 'description' => 'Người đọc' ],
+//             [ 'name' => 'tacGia', 'display_name' => 'Tác Giả', 'description' => 'Sáng tác' ],
+//             [ 'name' => 'vipAccount', 'display_name' => 'Vip Account', 'description' => 'Tài Khoản Vip' ],
+//         ]);
+//     }
+// }
 // php artisan db:seed --class=RoleSeeder

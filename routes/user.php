@@ -9,8 +9,8 @@ Route::get('/story', 'StoryController@index');
 Route::group(['middleware' => 'locale'], function() {
     $ctl = 'StoryController';
     Route::get('/', 'StoryController@home');
-    Route::prefix('user')->group(function() {
-    });
+    Route::get('news', 'NewsController@getNews')->name('getNews');
+    Route::get('news/{slug}', 'NewsController@detailNews')->name('getNews');
 
     Route::post('/getCategory', 'StoryController@getCategory')->name('getCategory');
     Route::get('/list_story', $ctl . '@listStory')->name('list_story');

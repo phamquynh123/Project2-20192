@@ -19,4 +19,18 @@ class NewsController extends Controller
     {
         return view('admin.news.blade.php');
     }
+
+    public function getNews()
+    {
+        $news =$this->newsRepository->getListNews();
+
+        return view('user.news', ['data' => $news]);
+    }
+
+    public function detailNews($slug)
+    {
+        $data = $this->newsRepository->detailNews($slug);
+
+        return view('user.detailNews', ['data' => $data]);
+    }
 }
