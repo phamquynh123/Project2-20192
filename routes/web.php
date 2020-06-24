@@ -87,7 +87,8 @@ Route::group(['middleware' => 'locale'], function() {
 
         Route::group(['prefix' => 'news'],function() {
 			$ctl = 'NewsController';
-			Route::get('list.html', $ctl . '@listNews')->name('news.list');
+            Route::get('list.html', $ctl . '@listNews')->name('news.list');
+			Route::get('datatable', $ctl . '@listNews')->name('news.datatable');
 			Route::get('add.html', $ctl . '@addNewsForm')->name('news_add_form');
 	    	Route::post('add.html', $ctl . '@addNewsAccess')->name('news_add');
 			Route::get('edit/{id}', $ctl . '@editNewsForm')->name('news_edit_form');

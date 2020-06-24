@@ -11,32 +11,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(RoleDatabaseSeeder::class);
-    }
-}
-
-class UserDatabaseSeeder extends Seeder {
-    public function run() 
-    {
-        //
-        Schema::disableForeignKeyConstraints();
-        $users = [
-            
-        ];
-
-        foreach ($users as $user) {
-            DB::table('users')->insert([
-                'name' => $user[0],
-                'description' => $user[1],
-                'avatar' ,
-                'account_status', //vip or normal
-                'role_id',
-                'status', //active deactive
-                'password',
-                'email',
-            ]);
-        }
-
-        Schema::enableForeignKeyConstraints();
+        DB::table('users')->insert([
+            ['name' => 'admin', 'email' => 'admin@gmail.com', 'password' => '$2y$10$rLYB/w0WfUSV1f7zNe6FIe3OQRFL7kZxahWxpxrpINTGzlX9PjLly', 'role_id' => 1, 'status' => 1,],
+            ['name' => 'user', 'email' => 'user@gmail.com', 'password' => '$2y$10$rLYB/w0WfUSV1f7zNe6FIe3OQRFL7kZxahWxpxrpINTGzlX9PjLly', 'role_id' => 2, 'status' => 1,],
+            ['name' => 'author', 'email' => 'author@gmail.com', 'password' => '$2y$10$rLYB/w0WfUSV1f7zNe6FIe3OQRFL7kZxahWxpxrpINTGzlX9PjLly', 'role_id' => 3, 'status' => 1,],
+            ['name' => 'vip', 'email' => 'vip@gmail.com', 'password' => '$2y$10$rLYB/w0WfUSV1f7zNe6FIe3OQRFL7kZxahWxpxrpINTGzlX9PjLly', 'role_id' => 4, 'status' => 1,],
+        ]);
     }
 }

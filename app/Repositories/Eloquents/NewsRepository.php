@@ -19,6 +19,16 @@ class NewsRepository extends EloquentRepository implements NewsRepositoryInterfa
     {
         return News::class;
     }
+
+    public function detailNews($slug)
+    {
+    	return News::where('slug', $slug)->first();
+    }
+
+    public function getListNews()
+    {
+        return News::orderBy('created_at')->paginate(5);
+    }
 }
 
 ?>

@@ -75,6 +75,7 @@ return [
     'chapter' => 'Các Chương',
     'comment' => 'Bình Luận',
     'loginToComment' => 'Đăng Nhập Để Bình Luận',
+    'loginToLike' => 'Đăng Nhập Để Bình chọn',
     'storyManagement' => 'Quản lí truyện',
     'success' => 'Thành công',
     'news' => 'Tin tức',

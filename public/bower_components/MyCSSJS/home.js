@@ -73,17 +73,20 @@ $(document).on('click', '.vote-Story', function(e) {
         // data: new FormData(this),
         url: route('vote', $story_id),
         success: function(response){
-            toastr.info(response.success);
             if (response.status == 'voted') {
+                toastr.info(response.success);
                 var html = `<a href="#" class="vote-Story" data-id=` + response.total_vote.id +`>
                                     <i class="fas fa-thumbs-up"></i>
                                     <span class="total_vote">` + response.total_vote.total_vote +`</span>
                                 </a>`;
             } else if(response.status == 'unvote') {
+                toastr.info(response.success);
                 var html = `<a href="#" class="vote-Story notlike" data-id=` + response.total_vote.id +`>
                                     <i class="fas fa-thumbs-up"></i>
                                     <span class="total_vote">` + response.total_vote.total_vote +`</span>
                                 </a>`;
+            } else if(response.status == 'loginRequired') {
+                toastr.error(response.error);
             }
             $('.vote').html(html);
 

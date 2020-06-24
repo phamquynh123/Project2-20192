@@ -54,16 +54,12 @@
             <div class="container">
                 <div class="pull-left">
                     <p> @if(Auth::check())
-                        {{ Auth::user()->name }}
+                        {{ Auth::user()->name }} - 
                         @endif
-                         - Welcome to library</p>
+                        Welcome to library</p>
                 </div>
                 <ul class="my-account">
-                        <li><a href="#"><i class="fa fa-list"></i> Wishlist</a></li>
-                        <li><a href="#"><i class="far fa-user"></i></i> My Account</a></li>
-                        <li><a href="#"><i class="fa fa-compress"></i> Compare</a></li>
-                        <li><a href="{{ route('login') }}"><i class="fa fa-sign-in"></i> Login</a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i> 0Item</a></li>                        
+                        <li><a href="{{ route('login') }}"><i class="far fa-user"></i> Login</a></li>
                     </ul>
             </div>
         </div>
@@ -77,38 +73,13 @@
                 <div class="kode-navigation">
                     <ul>
                         <li><a href="{{ asset('/') }}">{{ trans('message.home') }}</a>
-                            <ul>
-                                <li><a href="index-1.html">Home page 1</a></li>
-                            </ul>
                         </li>
                         
                         <li><a href="#">{{ trans('message.about_us') }}</a></li>
-                        <li><a href="{{ route('list_story') }}">{{ trans('message.book') }}</a>
-                            <ul>
-                                <li><a href="#">Book With Sidebar</a></li>
-                                <li><a href="#">Book Detail</a></li>                                
-                            </ul>
-                        </li>
-                        <li><a href="#">{{ trans('message.blog') }}</a>
-                            <ul>
-                                <li><a href="#">Blog 2 Column</a></li>
-                                <li><a href="#">Blog Full</a></li>
-                                <li><a href="#">Blog Detail</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ route('list_story') }}">{{ trans('message.book') }}</a></li>
                         <li><a href="#">{{ trans('message.author') }}</a>
-                            <ul>
-                                <li><a href="#">Authors</a></li>
-                                <li><a href="#">Authors Detail</a></li>                                        
-                            </ul>
                         </li>
-                        <li class="last"><a href="#">{{ trans('message.event') }}</a>
-                            <ul>
-                                <li><a href="#">Event 2 Column</a></li>
-                                <li><a href="#">Event 3 Column</a></li>
-                                <li><a href="#">Event Single</a></li>
-                                <li><a href="#">Event Detail</a></li>
-                            </ul>
+                        <li class="last"><a href="{{ asset('/news') }}">{{ trans('message.event') }}</a>
                         </li>
 
                         <li class="last"><a href="#">{{ trans('message.contact') }}</a></li>

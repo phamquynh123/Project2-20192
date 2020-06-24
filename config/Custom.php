@@ -12,7 +12,7 @@
         'VipStory' => '1', //story for vip account
         'NormalStory' => '0', //story for normal account
 
-        'ImgDefaul' => 'IMG/defaul.jpeg',
+        'ImgDefaul' => 'IMG/bookdefaul.jpeg',
         'linkImgDefaul' => 'storage/story/',
 
         'roleAdmin' => 1,
