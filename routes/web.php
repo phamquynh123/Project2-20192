@@ -24,6 +24,13 @@ Route::group(['middleware' => 'locale'], function() {
     Route::group(['middleware' => 'auth'], function() {
         Route::prefix('/admin')->group(function() {
             Route::get('/', 'AdminController@index');
+            //request add Vip
+            Route::get('/approveRequest', 'UserController@approveRequest');
+            Route::get('/approveRequest/datatable', 'UserController@approveRequestDatatable')->name('aproveRequest');
+            Route::prefix('request')->group(function() {
+                Route::get('confirm/{id}', 'UserController@confirmRequest')->name('confirmRequest');
+                Route::get('refuse/{id}', 'UserController@refuseRequest')->name('refuseRequest');
+            });
             Route::prefix('/menu')->name('category.')->group(function(){
                 $categoryController = 'CategoryController';
                 // Route::post("cart", $shopController . "@cart")->name('cart');

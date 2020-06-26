@@ -22,4 +22,14 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
         return User::where('role_id', '!=' , config('Custom.roleAdmin'))->orWhereNull('role_id')->get();
     }
 
+    public function getAuthor()
+    {
+        return User::where('role_id', '!=' , config('Custom.roleAuthor'))->orWhere('role_id', '!=' , config('Custom.roleAuthor'));
+    }
+
+    public function getRequestUpdateAccount()
+    {
+        return User::where('account_status', '1')->get();
+    }
+
 }

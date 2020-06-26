@@ -113,7 +113,7 @@
                                         </div>
                                     @else 
                                         <div class="chapter bg-red">
-                                            <a href="#" class="upgrateAccount bg-red">
+                                            <a href="#" class="upgrateAccount bg-red" data-toggle="modal" data-target="#exampleModal">
                                                 {{ trans('message.upgrateAccountToRead') }}
                                             </a>
                                         </div>
@@ -233,6 +233,30 @@
 
     </div>
 </div>
+</div>
+
+
+<!-- upgrate accounr -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ trans('message.upgrateAccount') }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Yêu cầu sử dụng tài khoản VIP là 30.000 VND/tháng. <br>
+        Với tài khoản VIP bạn có thể đọc không giới hạn sách trong thư viện. <br>
+        Bạn chắc chắn muốn nâng cấp ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="upgrateAccount">Gửi yêu cầu.</button>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection
 

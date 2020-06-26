@@ -77,12 +77,12 @@
                         
                         <li><a href="#">{{ trans('message.about_us') }}</a></li>
                         <li><a href="{{ route('list_story') }}">{{ trans('message.book') }}</a></li>
-                        <li><a href="#">{{ trans('message.author') }}</a>
+                        <li><a href="{{ route('list_story') }}">{{ trans('message.author') }}</a>
                         </li>
                         <li class="last"><a href="{{ asset('/news') }}">{{ trans('message.event') }}</a>
                         </li>
 
-                        <li class="last"><a href="#">{{ trans('message.contact') }}</a></li>
+                        <li class="last"><a href="{{ asset('contact') }}">{{ trans('message.contact') }}</a></li>
                     </ul>
                 </div>
                 <div id="kode-responsive-navigation" class="dl-menuwrapper">
@@ -263,58 +263,65 @@
             <div class="container">
                 <!--SECTION HEADING START-->
                 <div class="section-heading-1 dark-sec">
-                    <h2>Become a member</h2>
+                    <h2>{{ trans('message.regiterAcconut') }}</h2>
                     <p>Submit your books idea and you can become an Author.</p>
                     <div class="kode-icon"><i class="fa fa-book"></i></div>
                 </div>
                 <!--SECTION HEADING END-->
                 <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="input-container">
-                            <i class="fa fa-user"></i>
-                            <input type="text" placeholder="Your Name">
+                    <form method="POST" action="{{ route('user.register') }}">
+                        @csrf
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-container">
+                                <i class="fa fa-user"></i>
+                                <input id="name" type="text" class="{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required placeholder="Your name">
+                            </div>
+
+                            @if ($errors->has('name'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                            @endif
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="input-container">
-                            <i class="fa fa-envelope-o"></i>
-                            <input type="text" placeholder="Your Email">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-container">
+                                <i class="fas fa-envelope-square"></i>
+                                <input id="email" type="email" class="{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required placeholder="Email">
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="input-container">
-                            <i class="fa fa-home"></i>
-                            <input type="text" placeholder="Your Address">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-container">
+                                <i class="fas fa-key"></i>
+                                <input id="password" type="password" class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required placeholder="Password">
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="input-container">
-                            <i class="fa fa-phone"></i>
-                            <input type="text" placeholder="Your Phone">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-container">
+                                <i class="fas fa-key"></i>
+                                <input id="password-confirm" type="password" name="password_confirmation" required placeholder="Confirm Password">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="input-container">
-                            <i class="fa fa-calendar"></i>
-                            <input type="text" placeholder="Your Age">
+                        {{-- <div class="col-md-12 col-sm-12">
+                            <a href="#" class="reg-btn">Register</a>
+                        </div> --}}
+                        <div class="form-group col-md-12 col-sm-12">
+                            <button type="submit" class="reg-btn">
+                                {{ __('Register') }}
+                            </button>
                         </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="input-container">
-                            <i class="fa fa-check-square-o"></i>
-                            <select>
-                                <option>Select Package</option>
-                                <option>Package One</option>
-                                <option>Package Two</option>
-                                <option>Package Three</option>
-                                <option>Package Four</option>
-                                <option>Package Five</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12">
-                        <a href="#" class="reg-btn">Register</a>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>

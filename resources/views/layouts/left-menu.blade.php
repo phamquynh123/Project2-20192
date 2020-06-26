@@ -62,6 +62,9 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
+                                <a href="{{ asset('/admin/approveRequest') }}"> {{ trans('message.approveRequest') }}</a>
+                            </li>
+                            {{-- <li>
                                 <a href="{{ asset('/admin/normalUser') }}"> {{ trans('message.normalUser') }}</a>
                             </li>
                             <li>
@@ -69,7 +72,7 @@
                             </li>
                             <li>
                                 <a href="{{ asset('/admin/author') }}">{{ trans('message.author') }}</a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </li>
                     @endif
