@@ -30,6 +30,7 @@ class StoryController extends Controller
     protected $StoryAuthor;
     protected $CategoryStory;
     protected $Vote;
+    protected $User;
 
     public function __construct( 
         CategoryRepositoryInterface $Category,
@@ -39,7 +40,8 @@ class StoryController extends Controller
         CommentRepositoryInterface $Comment,
         StoryAuthor $StoryAuthor,
         CategoryStory $CategoryStory,
-        Vote $Vote
+        Vote $Vote,
+        User $User
     ) {
         $this->Category = $Category;
         $this->Language = $Language;
@@ -49,6 +51,7 @@ class StoryController extends Controller
         $this->StoryAuthor = $StoryAuthor;
         $this->CategoryStory = $CategoryStory;
         $this->Vote = $Vote;
+        $this->User = $User;
 
         $language = config('app.locale');
     }
@@ -426,6 +429,25 @@ class StoryController extends Controller
         ])->paginate(config('Custom.list_story_client'));
 
         return view('user.list_story', ['data' => $story]);
+    }
+
+    public function listAuthor()
+    {
+        $author = $this->User->getAuthor()->with([
+        ])->paginate(5);
+    }
+
+    public function contact()
+    {
+        return view('user.contact');
+    }
+
+    public function upgrateAccount()
+    {
+        $data['account_status'] = 1;
+        $status = $this->User->update(Auth::user()->id, $data);
+
+        return response()->json(['success' => trans('message.waitingAdmin')]);
     }
 
 }

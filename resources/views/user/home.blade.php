@@ -58,114 +58,21 @@
 <section class="lib-categories-section">
     <div class="container">
         <div class="section-heading-1 dark-sec">
-            <h2>Our Top Categories</h2>
-            <p>Here are some of the Top Categories of the Books Available.</p>
+            <h2>Top danh mục được yêu thích</h2>
+            <p>Đây là danh mục của những sách được yêu thích nhất</p>
             <div class="kode-icon"><i class="fa fa-book"></i></div>
         </div>
         <ul class="nav nav-tabs" role="tablist">
             @foreach ($category_theloai as $category)
-                <li role="presentation" >
-                    <a href="#{{ $category->slug }}" aria-controls="{{ $category->slug }}" role="tab" data-toggle="tab" class="category-content" data-categoryId={{ $category['id'] }} >{{ $category['title'] }}
+                <li >
+                    <a href="{{ asset('/category/') . '/' . $category->slug }}" role="tab" class="category-content" data-categoryId={{ $category['id'] }} >{{ $category['title'] }}
                     </a>
                 </li>
             @endforeach
         </ul>
+    </div>
+</section>
 
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade in active" id="Photography">
-                <ul class="bxslider">
-                    <li>
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-3 col-sm-6 best-seller-pro">
-                            <figure>
-                                <img src="images/book5.png" alt="">
-                            </figure>
-                            <div class="kode-text">
-                                <h3>PENDRAGON</h3>
-                            </div>
-                            <div class="kode-caption">
-                                <h3>PENDRAGON Dr.Machale</h3>
-                                <div class="rating">
-                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                </div>
-                                <p>Dr.Machale</p>
-                                <p class="price">$224.20</p>
-                                <a href="#" class="add-to-cart">Add To Cart</a>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-3 col-sm-6 best-seller-pro">
-                            <figure>
-                                <img src="images/book6.png" alt="">
-                            </figure>
-                            <div class="kode-text">
-                                <h3><a href="#">Bridget Jones</a></h3>
-                            </div>
-                            <div class="kode-caption">
-                                <h3>Mad About the Boy</h3>
-                                <div class="rating">
-                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                </div>
-                                <p>Helen Fielding</p>
-                                <p class="price">$77.70</p>
-                                <a href="#" class="add-to-cart">Add To Cart</a>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-3 col-sm-6 best-seller-pro">
-                            <figure>
-                                <img src="images/book7.png" alt="">
-                            </figure>
-                            <div class="kode-text">
-                                <h3><a href="#">Burnt Siena</a></h3>
-                            </div>
-                            <div class="kode-caption">
-                                <h3>Art History Mystery</h3>
-                                <div class="rating">
-                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                </div>
-                                <p>Sara Wisseman</p>
-                                <p class="price">$334.50</p>
-                                <a href="#" class="add-to-cart">Add To Cart</a>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-3 col-sm-6 best-seller-pro">
-                            <figure>
-                                <img src="images/book8.png" alt="">
-                            </figure>
-                            <div class="kode-text">
-                                <h3><a href="#">Chrysalis</a></h3>
-                            </div>
-                            <div class="kode-caption">
-                                <h3>The Brave Girl</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                <p>William S.</p>
-                                <p class="price">$24.75</p>
-                                <a href="#" class="add-to-cart">Add To Cart</a>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
- <!--VIDEO SECTION START-->
-<section class="lib-call-to-action">
-    <div class="container">
-        <h2>Checkout Huge Feature lists</h2>
-        <p>Here are some of the Exciting Book Guide Features.</p>
-        <a href="#" class="more">Learn more</a>
-    </div>
-</section>
-<!--VIDEO SECTION END-->
 <!--NORMAL sTORY SECTION START -->
 <section class="lib-papular-books">
     <div class="container">
@@ -240,8 +147,8 @@
         <div class="row">
             <div class="col-md-3 col-sm-6">
                 <div class="count-up">
-                    <span class="counter circle">21</span>
-                    <p>Working Year</p>
+                    <span class="counter circle">1</span>
+                    <p>Năm hoạt động</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
@@ -252,14 +159,14 @@
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="count-up">
-                    <span class="counter circle">458</span>
-                    <p>Top Author</p>
+                    <span class="counter circle">10</span>
+                    <p>Top Tasc giả</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="count-up">
-                    <span class="counter circle">750</span>
-                    <p>Book Published</p>
+                    <span class="counter circle">50</span>
+                    <p>Sách công khai</p>
                 </div>
             </div>
         </div>
@@ -343,8 +250,9 @@
             <div class="container">
                 <!--SECTION HEADING START-->
            <div class="section-heading-1 dark-sec">
-                <h2>Our Testimonials</h2>
-                <p>What our clients say about the books reviews and comments</p>
+                <h2>{{-- Our testimonials --}} Sứ mệnh của chúng tôi</h2>
+                {{-- <p>What our clients say about the books reviews and comments</p> --}}
+                <p>Khách hàng của chúng tôi nói gì về những đánh giá và nhận xét về sách</p>
                 <div class="kode-icon"><i class="fa fa-book"></i></div>
             </div>
             <!--SECTION HEADING END-->
@@ -353,13 +261,13 @@
                 <div class="item">
                     <div class="lib-testimonial-content">
                         <div class="kode-text">
-                            <p>I loved thrift books! It's refreshing to buy discounted books and have them shipped quickly. I could afford to buy 3 copies to hand out to friends also interested in the topic. Thank you!! Read more</p>
+                            <p>Tôi yêu những cuốn sách tiết kiệm! Thật mới mẻ khi mua những cuốn sáchtheo một phương pháp mới, tiện lợi hơn. Tôi có thể chia sẻ cho bạn bè cũng quan tâm đến chủ đề này. Cảm ơn bạn!!</p>
                         </div>
                         <div class="kode-thumb">
-                            <img src="images/testimonials1.png" alt="">
+                            <img src="{{ asset('/') . config('Custom.PeopleDefaul') }}" alt="">
                         </div>
-                        <h4>Jenifer Robbert</h4>
-                        <p class="title">Author</p>
+                        <h4>Admin</h4>
+                        <p class="title">Tác giả</p>
                     </div>
                 </div>
                 <!--BLOG ITEM END-->
@@ -367,41 +275,14 @@
                 <div class="item">
                     <div class="lib-testimonial-content">
                         <div class="kode-text">
-                            <p>You have great prices and the books are in the shape as stated. Although it takes so long for them to get to their destination. I have been ordering for years and get great books in the shape said.</p>
+                            <p>Những câu chuyện thú vị. Mang lại nhiều cơ hội trải nghiệm cho mọi người.
+                            Cảm ơn TQUYNH - LIBRARY <br><br></p>
                         </div>
                         <div class="kode-thumb">
-                            <img src="images/testimonials-img4.png" alt="">
+                            <img src="{{ asset('/') . config('Custom.PeopleDefaul') }}" alt="">
                         </div>
-                        <h4>Jenifer Robbert</h4>
-                        <p class="title">Author</p>
-                    </div>
-                </div>
-                <!--BLOG ITEM END-->
-                <!--BLOG ITEM START-->
-                <div class="item">
-                    <div class="lib-testimonial-content">
-                        <div class="kode-text">
-                            <p>I have made many orders with Thrift Books. I always get exactly what I order in a timely manner at a great price. I have had to contact the customer service team once.</p>
-                        </div>
-                        <div class="kode-thumb">
-                            <img src="images/testimonials-img3.png" alt="">
-                        </div>
-                        <h4>Jenifer Robbert</h4>
-                        <p class="title">Author</p>
-                    </div>
-                </div>
-                <!--BLOG ITEM END-->
-                <!--BLOG ITEM START-->
-                <div class="item">
-                    <div class="lib-testimonial-content">
-                        <div class="kode-text">
-                            <p>I couldn't believe the prices for such great books, at no shipping! I am going to be a good customer at your store! And, I am telling my Facebook friends about.</p>
-                        </div>
-                        <div class="kode-thumb">
-                            <img src="images/testimonials-img2.png" alt="">
-                        </div>
-                        <h4>Jenifer Robbert</h4>
-                        <p class="title">Author</p>
+                        <h4>Jenifer </h4>
+                        <p class="title">Độc giả</p>
                     </div>
                 </div>
                 <!--BLOG ITEM END-->
@@ -412,7 +293,7 @@
                             <p>ordered 14 books, received 14 books within a week. very happy with customer support and with the receipt of books. Keep It Up Good Guide we love you the best books library available today.</p>
                         </div>
                         <div class="kode-thumb">
-                            <img src="images/writer2.png" alt="">
+                            <img src="{{ asset('/') . config('Custom.PeopleDefaul') }}" alt="">
                         </div>
                         <h4>Jenifer Robbert</h4>
                         <p class="title">Author</p>
@@ -426,7 +307,7 @@
                             <p>Thrift Books is the absolute best book seller on the Internet!! Their selection is marvelous, price/shipping unbeatable and timely service is outstanding.</p>
                         </div>
                         <div class="kode-thumb">
-                            <img src="images/writer3.png" alt="">
+                            <img src="{{ asset('/') . config('Custom.PeopleDefaul') }}" alt="">
                         </div>
                         <h4>Jenifer Robbert</h4>
                         <p class="title">Author</p>
@@ -437,30 +318,7 @@
             </div>
         </section>
         <!--GIFT CARD SECTION END-->
-        <!--GIFT CARD SECTION END-->
-        <section class="kode-booklet">
-            <div class="container">
-                <!--SECTION CONTENT START-->
-                <div class="section-heading-1">
-                    <h2>Book of The Month (Image base)</h2>
-                    <p>Here are some of the Top Authors that are available in Books Library</p>
-                    <div class="kode-icon"><i class="fa fa-book"></i></div>
-                </div>
-                <!--SECTION CONTENT END-->
-            </div>
-            <div id="canvas"></div>
-            <div class="zoom-icon zoom-icon-in"></div>
-            <div class="magazine-viewport">
-                <div class="container">
-                    <div class="magazine">
-                        <!-- Next button -->
-                        <div data-ignore="1" class="next-button"></div>
-                        <!-- Previous button -->
-                        <div data-ignore="1" class="previous-button"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!--TOP AUTHOR START-->
         <section class="kode-lib-team-member">
             <div class="container">
@@ -474,13 +332,13 @@
                 <div class="lib-authors">
                     <div class="social-icons">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
                         </ul>
                     </div>
-                    <img src="images/lib-author.png" alt="">
+                    <img src="{{ asset('/') . config('Custom.PeopleDefaul') }}" alt="">
                     <div class="kode-caption">
                         <h4>Nina Soriya</h4>
                         <p>Author</p>
@@ -489,13 +347,13 @@
                 <div class="lib-authors">
                     <div class="social-icons">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
                         </ul>
                     </div>
-                    <img src="images/lib-author2.png" alt="">
+                    <img src="{{ asset('/') . config('Custom.PeopleDefaul') }}" alt="">
                     <div class="kode-caption">
                         <h4>Martin</h4>
                         <p>Author</p>
@@ -504,13 +362,13 @@
                 <div class="lib-authors">
                     <div class="social-icons">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
                         </ul>
                     </div>
-                    <img src="images/lib-author3.png" alt="">
+                    <img src="{{ asset('/') . config('Custom.PeopleDefaul') }}" alt="">
                     <div class="kode-caption">
                         <h4>Alexder</h4>
                         <p>Author</p>
@@ -519,13 +377,13 @@
                 <div class="lib-authors">
                     <div class="social-icons">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
                         </ul>
                     </div>
-                    <img src="images/lib-author4.png" alt="">
+                    <img src="{{ asset('/') . config('Custom.PeopleDefaul') }}" alt="">
                     <div class="kode-caption">
                         <h4>Jullia</h4>
                         <p>Author</p>

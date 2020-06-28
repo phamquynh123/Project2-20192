@@ -3907,9 +3907,10 @@ section.lib-call-to-action .container{
 
 .lib-authors{
 	float:left;
-	width:25%;
+	width:24%;
 	position:relative;
 	margin-bottom:70px;
+	margin-right:1%;
 }
 .lib-authors img{
 	width:100%;

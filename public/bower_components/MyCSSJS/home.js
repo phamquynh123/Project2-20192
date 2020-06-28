@@ -40,8 +40,6 @@ $(document).on('submit', '#comment-story', function(e) {
         url: route('addComment'),
         success: function(response){
             toastr.info(response.success);
-            console.log(response.result);
-
             var html =` <div class="image-cmt float-left">
                             <img src="` + response.result.user.avatar + ` }}" alt="">
                         </div>
@@ -96,6 +94,17 @@ $(document).on('click', '.vote-Story', function(e) {
     });
 })
 
-$(document).on('click', '.upgrateAccount', function() {
-    
+$(document).on('click', '#upgrateAccount', function() {
+    $.ajax({
+        dataType: 'JSON',
+        method: 'get',
+        cache: false,
+        contentType: false,
+        processData: false,
+        url: route('upgrateAccount'),
+        success: function(response){
+            toastr.info(response.success);
+            $('#exampleModal').modal('hide');
+        },
+    });
 })

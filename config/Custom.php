@@ -13,6 +13,7 @@
         'NormalStory' => '0', //story for normal account
 
         'ImgDefaul' => 'IMG/bookdefaul.jpeg',
+        'PeopleDefaul' => 'IMG/defaul.jpeg',
         'linkImgDefaul' => 'storage/story/',
 
         'roleAdmin' => 1,

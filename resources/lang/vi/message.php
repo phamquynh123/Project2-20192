@@ -81,5 +81,9 @@ return [
     'news' => 'Tin tức',
     'menu' => 'Menu',
     'category' => 'Danh mục',
+    'regiterAcconut' => 'Đăng kí tài khoản',
+    'waitingAdmin' => 'Vui lòng đợi admin xác nhận yêu cầu của bạn',
+    'approveRequest' => 'Phê duyệt yêu cầu',
+    'addVip' => 'Nâng cấp tài khoản',
 
 ];

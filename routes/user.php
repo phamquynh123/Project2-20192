@@ -8,9 +8,13 @@ Route::get('/story', 'StoryController@index');
 
 Route::group(['middleware' => 'locale'], function() {
     $ctl = 'StoryController';
-    Route::get('/', 'StoryController@home');
+    Route::get('/', 'StoryController@home')->name('home');
     Route::get('news', 'NewsController@getNews')->name('getNews');
     Route::get('news/{slug}', 'NewsController@detailNews')->name('getNews');
+
+        Route::get('list_author', $ctl . '@listAuthor')->name('list_author');
+        Route::get('contact', $ctl . '@contact')->name('contact');
+        Route::get('upgrate', $ctl . '@upgrateAccount')->name('upgrateAccount');
 
     Route::post('/getCategory', 'StoryController@getCategory')->name('getCategory');
     Route::get('/list_story', $ctl . '@listStory')->name('list_story');
@@ -21,5 +25,8 @@ Route::group(['middleware' => 'locale'], function() {
     Route::get('vote/{id}', $ctl . '@vote')->name('vote');
 
     Route::get('category/{slug}', $ctl . '@getStoryByCategory')->name('getStoryByCategory');
+    Route::post('/user/register', 'HomeController@UserRegister')->name('user.register');
+
+
 
 });
