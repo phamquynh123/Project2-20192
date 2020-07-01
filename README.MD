@@ -9,6 +9,6 @@
     <p>6. php artisan key:generate</p>
     <p>7. php artisan migrate</p>
     <p>8. php artisan db:seed</p>
-<p> Quản lí phân quyền với quyền là root, Author, Normal User, Vip User. Trong đó các tài khoản lần lươt là : admin@gmail.com,  </p>
+<p> Quản lí phân quyền với quyền là root, Author, Normal User, Vip User. Trong đó các tài khoản lần lươt là : admin@gmail.com, author@gmail.com, user@gmail.com, vip@gmail.com. Mật khẩu mặc định : 123456 </p>
 <hr>
 <p></p>
